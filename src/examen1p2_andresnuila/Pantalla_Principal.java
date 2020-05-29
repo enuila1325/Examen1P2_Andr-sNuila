@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package examen1p2_andresnuila;
 
 import java.util.ArrayList;
@@ -40,6 +35,10 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         DefaultComboBoxModel modelo = (DefaultComboBoxModel) cb_TipoDeUsuario.getModel();
         modelo.addElement("Gerente");
         modelo.addElement("Personal General");
+        DefaultComboBoxModel modeloO = (DefaultComboBoxModel) cb_ListaTiposObjetos.getModel();
+        modeloO.addElement("Zapato");
+        modeloO.addElement("Ropa");
+        modeloO.addElement("Hogar");
     }
 
     /**
@@ -99,6 +98,25 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         jt_ListaPersonal = new javax.swing.JTable();
         jb_EliminarPersona = new javax.swing.JButton();
         jb_Regresar2 = new javax.swing.JButton();
+        CrearObjetos = new javax.swing.JDialog();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        cb_ListaTiposObjetos = new javax.swing.JComboBox<>();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
         jb_Crear = new javax.swing.JButton();
         jb_Modificar = new javax.swing.JButton();
         jb_Eliminar = new javax.swing.JButton();
@@ -112,6 +130,11 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         });
 
         jb_CrearObjeto.setText("Objeto");
+        jb_CrearObjeto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_CrearObjetoMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout CrearLayout = new javax.swing.GroupLayout(Crear.getContentPane());
         Crear.getContentPane().setLayout(CrearLayout);
@@ -424,6 +447,11 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jt_ListaPersonal);
 
         jb_EliminarPersona.setText("Eliminar");
+        jb_EliminarPersona.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_EliminarPersonaMouseClicked(evt);
+            }
+        });
 
         jb_Regresar2.setText("Regresar");
         jb_Regresar2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -458,6 +486,114 @@ public class Pantalla_Principal extends javax.swing.JFrame {
                         .addGap(101, 101, 101)
                         .addComponent(jb_Regresar2, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(24, Short.MAX_VALUE))
+        );
+
+        jLabel16.setText("Color");
+
+        jLabel17.setText("Marca");
+
+        jLabel18.setText("Descripcion");
+
+        jLabel19.setText("Tamaño");
+
+        jLabel20.setText("Calidad");
+
+        jLabel21.setText("Que persona lo ingreso al sistema");
+
+        jLabel22.setText("Tipo de objeto");
+
+        jLabel23.setText("Talla");
+
+        jLabel24.setText("Descripcion Suela");
+
+        jLabel25.setText("Escala de comodidad");
+
+        jLabel26.setText("Talla");
+
+        jLabel27.setText("Tipo de Tela");
+
+        jLabel28.setText("Pais de elaboracion");
+
+        jLabel29.setText("Descripcion");
+
+        jLabel31.setText("Instruciones");
+
+        jLabel32.setText("Tiempo de garantia en meses");
+
+        javax.swing.GroupLayout CrearObjetosLayout = new javax.swing.GroupLayout(CrearObjetos.getContentPane());
+        CrearObjetos.getContentPane().setLayout(CrearObjetosLayout);
+        CrearObjetosLayout.setHorizontalGroup(
+            CrearObjetosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CrearObjetosLayout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addGroup(CrearObjetosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel21)
+                    .addGroup(CrearObjetosLayout.createSequentialGroup()
+                        .addGroup(CrearObjetosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel16)
+                            .addComponent(jLabel17)
+                            .addComponent(jLabel18)
+                            .addComponent(jLabel19)
+                            .addComponent(jLabel20))
+                        .addGap(218, 218, 218)
+                        .addGroup(CrearObjetosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel27)
+                            .addComponent(jLabel26)
+                            .addComponent(jLabel25)
+                            .addComponent(jLabel23)
+                            .addGroup(CrearObjetosLayout.createSequentialGroup()
+                                .addComponent(jLabel22)
+                                .addGap(52, 52, 52)
+                                .addComponent(cb_ListaTiposObjetos, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel24)
+                            .addComponent(jLabel28)
+                            .addComponent(jLabel29)
+                            .addGroup(CrearObjetosLayout.createSequentialGroup()
+                                .addComponent(jLabel31)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel30))
+                            .addComponent(jLabel32))))
+                .addContainerGap(111, Short.MAX_VALUE))
+        );
+        CrearObjetosLayout.setVerticalGroup(
+            CrearObjetosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(CrearObjetosLayout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addGroup(CrearObjetosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel16)
+                    .addComponent(jLabel22)
+                    .addComponent(cb_ListaTiposObjetos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel23)
+                .addGap(14, 14, 14)
+                .addGroup(CrearObjetosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel17)
+                    .addComponent(jLabel24))
+                .addGap(18, 18, 18)
+                .addGroup(CrearObjetosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel25)
+                    .addComponent(jLabel18))
+                .addGap(18, 18, 18)
+                .addGroup(CrearObjetosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel19)
+                    .addComponent(jLabel26))
+                .addGap(18, 18, 18)
+                .addGroup(CrearObjetosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel20)
+                    .addComponent(jLabel27))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel28)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel29)
+                .addGap(18, 18, 18)
+                .addGroup(CrearObjetosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel30)
+                    .addComponent(jLabel31))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel32)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 119, Short.MAX_VALUE)
+                .addComponent(jLabel21)
+                .addGap(110, 110, 110))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -573,11 +709,11 @@ public class Pantalla_Principal extends javax.swing.JFrame {
                 tmodelo.addRow(newrow);
                 jt_ListaPersonal.setModel(tmodelo);
             }
+            JOptionPane.showMessageDialog(this, "Se ha creado con exito el nuevo integrante del personal");
         } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(this, "Valide los datos");
         }
-        JOptionPane.showMessageDialog(this, "Se ha creado con exito el nuevo integrante del personal");
 
 
     }//GEN-LAST:event_jb_crearMouseClicked
@@ -628,6 +764,27 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         ListarPersonas.setVisible(false);
     }//GEN-LAST:event_jb_Regresar2MouseClicked
 
+    private void jb_EliminarPersonaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_EliminarPersonaMouseClicked
+        String masterPassword = JOptionPane.showInputDialog("Ingrese la contraseña maestra");
+        if (masterPassword.equals("unitec1234")) {
+            if (jt_ListaPersonal.getSelectedRow() >= 0) {
+                DefaultTableModel modelo = (DefaultTableModel) jt_ListaPersonal.getModel();
+                modelo.removeRow(jt_ListaPersonal.getSelectedRow());
+                jt_ListaPersonal.setModel(modelo);
+            }
+            JOptionPane.showMessageDialog(this, "Se ha eliminado de la tabla con exito");
+        } else {
+            JOptionPane.showMessageDialog(this, "Verifique la contraseña para realizar esta accion");
+        }
+    }//GEN-LAST:event_jb_EliminarPersonaMouseClicked
+
+    private void jb_CrearObjetoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_CrearObjetoMouseClicked
+        CrearObjetos.pack();
+        CrearObjetos.setLocationRelativeTo(this);
+        CrearObjetos.setVisible(true);
+        Crear.setVisible(false);
+    }//GEN-LAST:event_jb_CrearObjetoMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -666,8 +823,10 @@ public class Pantalla_Principal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDialog CreacionPersonal;
     private javax.swing.JDialog Crear;
+    private javax.swing.JDialog CrearObjetos;
     private javax.swing.JDialog Listar;
     private javax.swing.JDialog ListarPersonas;
+    private javax.swing.JComboBox<String> cb_ListaTiposObjetos;
     private javax.swing.JComboBox<String> cb_TipoDeUsuario;
     private javax.swing.ButtonGroup grupoEstadoCivil;
     private javax.swing.ButtonGroup grupoSexo;
@@ -678,8 +837,25 @@ public class Pantalla_Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -717,6 +893,6 @@ public class Pantalla_Principal extends javax.swing.JFrame {
     private javax.swing.JTextField tf_newPeso;
     private javax.swing.JTextField tf_newTrabajadoPersonal;
     // End of variables declaration//GEN-END:variables
-private ArrayList<Gerente> gerentes = new ArrayList();
+    private ArrayList<Gerente> gerentes = new ArrayList();
     private ArrayList<Persona_General> personal = new ArrayList();
 }
