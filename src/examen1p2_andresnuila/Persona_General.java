@@ -8,8 +8,8 @@ public class Persona_General extends Persona {
     public Persona_General() {
     }
 
-    public Persona_General(String ocupacion, String horario, int semanas, int sueldo, String id, String nombre, String sexo, String estadoCivil, double altura, double peso) {
-        super(id, nombre, sexo, estadoCivil, altura, peso);
+    public Persona_General(String ocupacion, String horario, int semanas, int sueldo, String id, String nombre, String sexo, String estadoCivil, double altura, double peso, int edad) {
+        super(id, nombre, sexo, estadoCivil, altura, peso, edad);
         this.ocupacion = ocupacion;
         this.horario = horario;
         this.semanas = semanas;

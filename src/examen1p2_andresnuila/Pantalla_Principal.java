@@ -7,6 +7,8 @@ package examen1p2_andresnuila;
 
 import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -86,6 +88,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         tf_gerentePassword = new javax.swing.JPasswordField();
         jLabel15 = new javax.swing.JLabel();
         tf_Sueldo = new javax.swing.JTextField();
+        jb_regresar = new javax.swing.JButton();
         grupoSexo = new javax.swing.ButtonGroup();
         grupoEstadoCivil = new javax.swing.ButtonGroup();
         Listar = new javax.swing.JDialog();
@@ -93,7 +96,9 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         jb_listarObjetos = new javax.swing.JButton();
         ListarPersonas = new javax.swing.JDialog();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jt_ListaPersonal = new javax.swing.JTable();
+        jb_EliminarPersona = new javax.swing.JButton();
+        jb_Regresar2 = new javax.swing.JButton();
         jb_Crear = new javax.swing.JButton();
         jb_Modificar = new javax.swing.JButton();
         jb_Eliminar = new javax.swing.JButton();
@@ -213,78 +218,88 @@ public class Pantalla_Principal extends javax.swing.JFrame {
 
         tf_Sueldo.setText("jTextField1");
 
+        jb_regresar.setText("REGRESAR");
+        jb_regresar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_regresarMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout CreacionPersonalLayout = new javax.swing.GroupLayout(CreacionPersonal.getContentPane());
         CreacionPersonal.getContentPane().setLayout(CreacionPersonalLayout);
         CreacionPersonalLayout.setHorizontalGroup(
             CreacionPersonalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(CreacionPersonalLayout.createSequentialGroup()
-                .addGap(184, 184, 184)
-                .addComponent(jb_crear, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CreacionPersonalLayout.createSequentialGroup()
-                .addGap(53, 53, 53)
                 .addGroup(CreacionPersonalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(CreacionPersonalLayout.createSequentialGroup()
+                        .addGap(184, 184, 184)
+                        .addComponent(jb_crear, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jb_regresar))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CreacionPersonalLayout.createSequentialGroup()
+                        .addGap(53, 53, 53)
                         .addGroup(CreacionPersonalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4))
-                        .addGap(40, 40, 40)
-                        .addGroup(CreacionPersonalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(rb_NewM)
-                            .addGroup(CreacionPersonalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(tf_NewId, javax.swing.GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE)
-                                .addComponent(tf_newName)
-                                .addComponent(tf_NewEdad))))
-                    .addGroup(CreacionPersonalLayout.createSequentialGroup()
-                        .addGroup(CreacionPersonalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel7))
-                        .addGap(18, 18, 18)
+                            .addGroup(CreacionPersonalLayout.createSequentialGroup()
+                                .addGroup(CreacionPersonalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel4))
+                                .addGap(40, 40, 40)
+                                .addGroup(CreacionPersonalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(rb_NewM)
+                                    .addGroup(CreacionPersonalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(tf_NewId, javax.swing.GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE)
+                                        .addComponent(tf_newName)
+                                        .addComponent(tf_NewEdad))))
+                            .addGroup(CreacionPersonalLayout.createSequentialGroup()
+                                .addGroup(CreacionPersonalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel7))
+                                .addGap(18, 18, 18)
+                                .addGroup(CreacionPersonalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(CreacionPersonalLayout.createSequentialGroup()
+                                        .addComponent(rb_NewSoltero)
+                                        .addGap(18, 18, 18)
+                                        .addGroup(CreacionPersonalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(rb_NewF)
+                                            .addComponent(rb_NewCasado)))
+                                    .addComponent(tf_NewAltura)
+                                    .addComponent(tf_newPeso))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
                         .addGroup(CreacionPersonalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(CreacionPersonalLayout.createSequentialGroup()
-                                .addComponent(rb_NewSoltero)
-                                .addGap(18, 18, 18)
-                                .addGroup(CreacionPersonalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(rb_NewF)
-                                    .addComponent(rb_NewCasado)))
-                            .addComponent(tf_NewAltura)
-                            .addComponent(tf_newPeso))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
-                .addGroup(CreacionPersonalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(CreacionPersonalLayout.createSequentialGroup()
-                        .addComponent(jLabel15)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(tf_Sueldo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(CreacionPersonalLayout.createSequentialGroup()
-                        .addComponent(jLabel13)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(tf_newTrabajadoPersonal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel9)
-                    .addGroup(CreacionPersonalLayout.createSequentialGroup()
-                        .addGap(5, 5, 5)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(88, 88, 88)
-                        .addComponent(cb_TipoDeUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(CreacionPersonalLayout.createSequentialGroup()
-                        .addComponent(jLabel12)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(tf_newHorarioPersonal, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(CreacionPersonalLayout.createSequentialGroup()
-                        .addComponent(jLabel11)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(tf_newOcupacionPersonal, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(CreacionPersonalLayout.createSequentialGroup()
-                        .addComponent(jLabel14)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(tf_gerentePassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(tf_NewUserGerente, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CreacionPersonalLayout.createSequentialGroup()
-                        .addComponent(jLabel10)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(tf_NewCargoGerente, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jLabel15)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(tf_Sueldo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(CreacionPersonalLayout.createSequentialGroup()
+                                .addComponent(jLabel13)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(tf_newTrabajadoPersonal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel9)
+                            .addGroup(CreacionPersonalLayout.createSequentialGroup()
+                                .addGap(5, 5, 5)
+                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(88, 88, 88)
+                                .addComponent(cb_TipoDeUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(CreacionPersonalLayout.createSequentialGroup()
+                                .addComponent(jLabel12)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(tf_newHorarioPersonal, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(CreacionPersonalLayout.createSequentialGroup()
+                                .addComponent(jLabel11)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(tf_newOcupacionPersonal, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(CreacionPersonalLayout.createSequentialGroup()
+                                .addComponent(jLabel14)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(tf_gerentePassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(tf_NewUserGerente, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CreacionPersonalLayout.createSequentialGroup()
+                                .addComponent(jLabel10)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(tf_NewCargoGerente, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap())
         );
         CreacionPersonalLayout.setVerticalGroup(
@@ -351,11 +366,21 @@ public class Pantalla_Principal extends javax.swing.JFrame {
                     .addComponent(jLabel15)
                     .addComponent(tf_Sueldo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
-                .addComponent(jb_crear)
-                .addGap(30, 30, 30))
+                .addGroup(CreacionPersonalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CreacionPersonalLayout.createSequentialGroup()
+                        .addComponent(jb_crear)
+                        .addGap(30, 30, 30))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CreacionPersonalLayout.createSequentialGroup()
+                        .addComponent(jb_regresar)
+                        .addContainerGap())))
         );
 
         jb_listarPersonas.setText("Personas");
+        jb_listarPersonas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_listarPersonasMouseClicked(evt);
+            }
+        });
 
         jb_listarObjetos.setText("Objetos");
 
@@ -380,7 +405,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
                 .addContainerGap(243, Short.MAX_VALUE))
         );
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jt_ListaPersonal.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -396,7 +421,16 @@ public class Pantalla_Principal extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(jt_ListaPersonal);
+
+        jb_EliminarPersona.setText("Eliminar");
+
+        jb_Regresar2.setText("Regresar");
+        jb_Regresar2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_Regresar2MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout ListarPersonasLayout = new javax.swing.GroupLayout(ListarPersonas.getContentPane());
         ListarPersonas.getContentPane().setLayout(ListarPersonasLayout);
@@ -405,13 +439,24 @@ public class Pantalla_Principal extends javax.swing.JFrame {
             .addGroup(ListarPersonasLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(318, Short.MAX_VALUE))
+                .addGap(113, 113, 113)
+                .addGroup(ListarPersonasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jb_EliminarPersona, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jb_Regresar2, javax.swing.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE))
+                .addContainerGap(101, Short.MAX_VALUE))
         );
         ListarPersonasLayout.setVerticalGroup(
             ListarPersonasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ListarPersonasLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 412, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(ListarPersonasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ListarPersonasLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 412, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(ListarPersonasLayout.createSequentialGroup()
+                        .addGap(43, 43, 43)
+                        .addComponent(jb_EliminarPersona, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(101, 101, 101)
+                        .addComponent(jb_Regresar2, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(24, Short.MAX_VALUE))
         );
 
@@ -429,6 +474,11 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         jb_Eliminar.setText("Eliminar");
 
         jb_Listar.setText("Listar");
+        jb_Listar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_ListarMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -479,42 +529,55 @@ public class Pantalla_Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jb_CrearMouseClicked
 
     private void jb_crearMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_crearMouseClicked
-        String id = tf_NewId.getText();
-        String nombre = tf_newName.getText();
-        String e = tf_NewEdad.getText();
-        int edad = Integer.parseInt(e);
-        String sexo = "";
-        if (rb_NewM.isSelected()) {
-            sexo = "M";
-        } else if (rb_NewF.isSelected()) {
-            sexo = "F";
-        }
-        String estado = "";
-        if (rb_NewCasado.isSelected()) {
-            estado = "Casado";
-        } else if (rb_NewSoltero.isSelected()) {
-            estado = "Soltero";
-        }
-        String a = tf_NewAltura.getText();
-        double altura = Double.parseDouble(a);
-        String p = tf_NewAltura.getText();
-        double peso = Double.parseDouble(a);
+        try {
+            String id = tf_NewId.getText();
+            String nombre = tf_newName.getText();
+            String e = tf_NewEdad.getText();
+            int edad = Integer.parseInt(e);
+            String sexo = "";
+            if (rb_NewM.isSelected()) {
+                sexo = "M";
+            } else if (rb_NewF.isSelected()) {
+                sexo = "F";
+            }
+            String estado = "";
+            if (rb_NewCasado.isSelected()) {
+                estado = "Casado";
+            } else if (rb_NewSoltero.isSelected()) {
+                estado = "Soltero";
+            }
+            String a = tf_NewAltura.getText();
+            double altura = Double.parseDouble(a);
+            String p = tf_NewAltura.getText();
+            double peso = Double.parseDouble(a);
 
-        if (cb_TipoDeUsuario.getSelectedIndex() == 0) {
-            String username = tf_NewUserGerente.getText();
-            String cargo = tf_NewCargoGerente.getText();
-            String password = tf_gerentePassword.getText();
-            Gerente g = new Gerente(username, password, cargo, id, nombre, sexo, estado, altura, peso);
-        } else if (cb_TipoDeUsuario.getSelectedIndex() == 1) {
-            String ocupacion = tf_newOcupacionPersonal.getText();
-            String horario = tf_newHorarioPersonal.getText();
-            String t = tf_newTrabajadoPersonal.getText();
-            int tiempo = Integer.parseInt(t);
-            String s = tf_Sueldo.getText();
-            int sueldo = Integer.parseInt(s);
-            Persona_General pg = new Persona_General(ocupacion, horario, tiempo, sueldo, id, nombre, sexo, estado, altura, peso);
-
+            if (cb_TipoDeUsuario.getSelectedIndex() == 0) {
+                String username = tf_NewUserGerente.getText();
+                String cargo = tf_NewCargoGerente.getText();
+                String password = tf_gerentePassword.getText();
+                Gerente g = new Gerente(username, password, cargo, id, nombre, sexo, estado, altura, peso, edad);
+                DefaultTableModel tmodelo = (DefaultTableModel) jt_ListaPersonal.getModel();
+                Object[] newrow = {g.getNombre(), cb_TipoDeUsuario.getSelectedItem()};
+                tmodelo.addRow(newrow);
+                jt_ListaPersonal.setModel(tmodelo);
+            } else if (cb_TipoDeUsuario.getSelectedIndex() == 1) {
+                String ocupacion = tf_newOcupacionPersonal.getText();
+                String horario = tf_newHorarioPersonal.getText();
+                String t = tf_newTrabajadoPersonal.getText();
+                int tiempo = Integer.parseInt(t);
+                String s = tf_Sueldo.getText();
+                int sueldo = Integer.parseInt(s);
+                Persona_General pg = new Persona_General(ocupacion, horario, tiempo, sueldo, id, nombre, sexo, estado, altura, peso, edad);
+                DefaultTableModel tmodelo = (DefaultTableModel) jt_ListaPersonal.getModel();
+                Object[] newrow = {pg.getNombre(), cb_TipoDeUsuario.getSelectedItem()};
+                tmodelo.addRow(newrow);
+                jt_ListaPersonal.setModel(tmodelo);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Valide los datos");
         }
+        JOptionPane.showMessageDialog(this, "Se ha creado con exito el nuevo integrante del personal");
 
 
     }//GEN-LAST:event_jb_crearMouseClicked
@@ -536,6 +599,34 @@ public class Pantalla_Principal extends javax.swing.JFrame {
             tf_newHorarioPersonal.setEnabled(true);
         }
     }//GEN-LAST:event_cb_TipoDeUsuarioItemStateChanged
+
+    private void jb_regresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_regresarMouseClicked
+        this.pack();
+        this.setLocationRelativeTo(this);
+        this.setVisible(true);
+        CreacionPersonal.setVisible(false);
+    }//GEN-LAST:event_jb_regresarMouseClicked
+
+    private void jb_ListarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_ListarMouseClicked
+        Listar.pack();
+        Listar.setLocationRelativeTo(this);
+        Listar.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jb_ListarMouseClicked
+
+    private void jb_listarPersonasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_listarPersonasMouseClicked
+        ListarPersonas.pack();
+        ListarPersonas.setLocationRelativeTo(this);
+        ListarPersonas.setVisible(true);
+        Listar.setVisible(false);
+    }//GEN-LAST:event_jb_listarPersonasMouseClicked
+
+    private void jb_Regresar2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_Regresar2MouseClicked
+        this.pack();
+        this.setLocationRelativeTo(this);
+        this.setVisible(true);
+        ListarPersonas.setVisible(false);
+    }//GEN-LAST:event_jb_Regresar2MouseClicked
 
     /**
      * @param args the command line arguments
@@ -596,16 +687,19 @@ public class Pantalla_Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JButton jb_Crear;
     private javax.swing.JButton jb_CrearObjeto;
     private javax.swing.JButton jb_CrearPersona;
     private javax.swing.JButton jb_Eliminar;
+    private javax.swing.JButton jb_EliminarPersona;
     private javax.swing.JButton jb_Listar;
     private javax.swing.JButton jb_Modificar;
+    private javax.swing.JButton jb_Regresar2;
     private javax.swing.JButton jb_crear;
     private javax.swing.JButton jb_listarObjetos;
     private javax.swing.JButton jb_listarPersonas;
+    private javax.swing.JButton jb_regresar;
+    private javax.swing.JTable jt_ListaPersonal;
     private javax.swing.JRadioButton rb_NewCasado;
     private javax.swing.JRadioButton rb_NewF;
     private javax.swing.JRadioButton rb_NewM;

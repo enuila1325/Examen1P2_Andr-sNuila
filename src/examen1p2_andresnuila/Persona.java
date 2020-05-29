@@ -3,17 +3,19 @@ package examen1p2_andresnuila;
 public class Persona {
     protected String id, nombre, sexo, estadoCivil;
     protected double altura, peso;
+    protected int edad;
 
     public Persona() {
     }
 
-    public Persona(String id, String nombre, String sexo, String estadoCivil, double altura, double peso) {
+    public Persona(String id, String nombre, String sexo, String estadoCivil, double altura, double peso, int edad) {
         this.id = id;
         this.nombre = nombre;
         this.sexo = sexo;
         this.estadoCivil = estadoCivil;
         this.altura = altura;
         this.peso = peso;
+        this.edad = edad;
     }
     
 
@@ -64,6 +66,15 @@ public class Persona {
     public void setPeso(double peso) {
         this.peso = peso;
     }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+    
 
     @Override
     public String toString() {

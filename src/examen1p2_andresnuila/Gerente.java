@@ -7,8 +7,8 @@ public class Gerente extends Persona {
     public Gerente() {
     }
 
-    public Gerente(String user, String password, String cargo, String id, String nombre, String sexo, String estadoCivil, double altura, double peso) {
-        super(id, nombre, sexo, estadoCivil, altura, peso);
+    public Gerente(String user, String password, String cargo, String id, String nombre, String sexo, String estadoCivil, double altura, double peso, int edad) {
+        super(id, nombre, sexo, estadoCivil, altura, peso, edad);
         this.user = user;
         this.password = password;
         this.cargo = cargo;
