@@ -51,6 +51,11 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="184" max="-2" attributes="0"/>
+                  <Component id="jb_crear" min="-2" pref="248" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="1" attributes="0">
                   <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
@@ -83,7 +88,7 @@
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="rb_NewF" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jb_NewCasado" min="-2" max="-2" attributes="0"/>
+                                      <Component id="rb_NewCasado" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <Component id="tf_NewAltura" max="32767" attributes="0"/>
@@ -94,35 +99,42 @@
                   <EmptySpace pref="58" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Group type="102" attributes="0">
+                          <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="tf_Sueldo" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
                           <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="tf_newTrabajadoPersonal" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel10" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="tf_NewUserGerente" pref="128" max="32767" attributes="0"/>
-                              <Component id="tf_NewCargoGerente" max="32767" attributes="0"/>
-                          </Group>
+                          <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+                          <Component id="jLabel8" min="-2" pref="113" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
+                          <Component id="cb_TipoDeUsuario" min="-2" pref="101" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                  <Component id="jLabel8" min="-2" pref="113" max="-2" attributes="0"/>
-                                  <Component id="jLabel11" alignment="1" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="jLabel12" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="cb_TipoDeUsuario" min="-2" pref="101" max="-2" attributes="0"/>
-                              <Component id="tf_newOcupacionPersonal" min="-2" pref="128" max="-2" attributes="0"/>
-                              <Component id="tf_newHorarioPersonal" min="-2" pref="128" max="-2" attributes="0"/>
-                          </Group>
+                      <Group type="102" attributes="0">
+                          <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="tf_newHorarioPersonal" min="-2" pref="128" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="tf_newOcupacionPersonal" min="-2" pref="128" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="tf_gerentePassword" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="tf_NewUserGerente" alignment="1" min="-2" pref="128" max="-2" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="tf_NewCargoGerente" min="-2" pref="128" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -144,48 +156,75 @@
                       </Group>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="tf_newName" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="tf_NewUserGerente" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="tf_NewCargoGerente" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tf_newName" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tf_NewEdad" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="tf_NewEdad" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="tf_NewUserGerente" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="rb_NewM" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="rb_NewF" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="rb_NewSoltero" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="rb_NewCasado" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tf_newOcupacionPersonal" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Component id="tf_gerentePassword" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="rb_NewM" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="rb_NewF" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="tf_NewCargoGerente" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="rb_NewSoltero" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jb_NewCasado" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="tf_newOcupacionPersonal" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="tf_NewAltura" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="tf_newHorarioPersonal" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="tf_NewAltura" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="jLabel12" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="tf_newHorarioPersonal" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="tf_newPeso" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="tf_newTrabajadoPersonal" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="109" max="32767" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel15" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tf_Sueldo" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="23" max="32767" attributes="0"/>
+                  <Component id="jb_crear" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -232,6 +271,9 @@
               <StringArray count="0"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="cb_TipoDeUsuarioItemStateChanged"/>
+          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
@@ -308,7 +350,7 @@
             <Property name="text" type="java.lang.String" value="Soltero"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JRadioButton" name="jb_NewCasado">
+        <Component class="javax.swing.JRadioButton" name="rb_NewCasado">
           <Properties>
             <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
               <ComponentRef name="grupoEstadoCivil"/>
@@ -347,6 +389,34 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="tf_newTrabajadoPersonal">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="jTextField1"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="jb_crear">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Crear"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jb_crearMouseClicked"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel14">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Password"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JPasswordField" name="tf_gerentePassword">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="jPasswordField1"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel15">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Sueldo"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="tf_Sueldo">
           <Properties>
             <Property name="text" type="java.lang.String" value="jTextField1"/>
           </Properties>
