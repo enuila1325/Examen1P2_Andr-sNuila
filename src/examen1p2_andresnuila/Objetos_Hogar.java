@@ -9,8 +9,8 @@ public class Objetos_Hogar extends Objeto {
     public Objetos_Hogar() {
     }
 
-    public Objetos_Hogar(String lugar, String instrucciones, String Garantia, Color color, String marca, String tamaño, String calidad, Persona entrega) {
-        super(color, marca, tamaño, calidad, entrega);
+    public Objetos_Hogar(String lugar, String instrucciones, String Garantia, Color color, String marca, String tamaño, String calidad, Persona entrega, String descripcion) {
+        super(color, marca, tamaño, calidad, entrega, descripcion);
         this.lugar = lugar;
         this.instrucciones = instrucciones;
         this.Garantia = Garantia;

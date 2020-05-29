@@ -1,6 +1,7 @@
 package examen1p2_andresnuila;
 
 public class Persona {
+
     protected String id, nombre, sexo, estadoCivil;
     protected double altura, peso;
     protected int edad;
@@ -17,7 +18,6 @@ public class Persona {
         this.peso = peso;
         this.edad = edad;
     }
-    
 
     public String getId() {
         return id;
@@ -74,12 +74,10 @@ public class Persona {
     public void setEdad(int edad) {
         this.edad = edad;
     }
-    
 
     @Override
     public String toString() {
-        return "id=" + id + ", nombre=" + nombre + ", estado Civil=" + estadoCivil + '}';
+        return "Nombre=" + nombre + "id=" + id + ", estado Civil=" + estadoCivil;
     }
-    
-    
+
 }

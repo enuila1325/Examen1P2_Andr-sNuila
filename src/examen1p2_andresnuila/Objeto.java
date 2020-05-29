@@ -3,22 +3,23 @@ package examen1p2_andresnuila;
 import java.awt.Color;
 
 public class Objeto {
+
     protected Color color;
-    protected String marca,tamaño,calidad;
+    protected String marca, tamaño, calidad, descrípcion;
     protected Persona entrega;
 
     public Objeto() {
     }
 
-    public Objeto(Color color, String marca, String tamaño, String calidad, Persona entrega) {
+    public Objeto(Color color, String marca, String tamaño, String calidad, Persona entrega, String descripcion) {
         this.color = color;
         this.marca = marca;
         this.tamaño = tamaño;
         this.calidad = calidad;
         this.entrega = entrega;
+        this.descrípcion = descripcion;
     }
 
-    
     public Color getColor() {
         return color;
     }
@@ -59,10 +60,17 @@ public class Objeto {
         this.entrega = entrega;
     }
 
+    public String getDescrípcion() {
+        return descrípcion;
+    }
+
+    public void setDescrípcion(String descrípcion) {
+        this.descrípcion = descrípcion;
+    }
+
     @Override
     public String toString() {
         return "Objeto{" + "color=" + color + ", marca=" + marca + ", tama\u00f1o=" + tamaño + ", calidad=" + calidad + ", entrega=" + entrega + '}';
     }
-    
-    
+
 }

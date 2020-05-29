@@ -4,24 +4,24 @@ import java.awt.Color;
 
 public class Zapatos extends Objeto {
 
-    private String talla, suela;
-    private int comodidad;
+    private String suela;
+    private int talla,comodidad;
 
     public Zapatos() {
     }
 
-    public Zapatos(String talla, String suela, int comodidad, Color color, String marca, String tamaño, String calidad, Persona entrega) {
-        super(color, marca, tamaño, calidad, entrega);
+    public Zapatos(int talla, String suela, int comodidad, Color color, String marca, String tamaño, String calidad, Persona entrega, String descripcion) {
+        super(color, marca, tamaño, calidad, entrega, descripcion);
         this.talla = talla;
         this.suela = suela;
         this.comodidad = comodidad;
     }
 
-    public String getTalla() {
+    public int getTalla() {
         return talla;
     }
 
-    public void setTalla(String talla) {
+    public void setTalla(int talla) {
         this.talla = talla;
     }
 
