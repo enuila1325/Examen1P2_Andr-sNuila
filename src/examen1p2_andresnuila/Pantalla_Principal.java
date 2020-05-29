@@ -5,6 +5,7 @@
  */
 package examen1p2_andresnuila;
 
+import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
 
 /**
@@ -87,6 +88,12 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         tf_Sueldo = new javax.swing.JTextField();
         grupoSexo = new javax.swing.ButtonGroup();
         grupoEstadoCivil = new javax.swing.ButtonGroup();
+        Listar = new javax.swing.JDialog();
+        jb_listarPersonas = new javax.swing.JButton();
+        jb_listarObjetos = new javax.swing.JButton();
+        ListarPersonas = new javax.swing.JDialog();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         jb_Crear = new javax.swing.JButton();
         jb_Modificar = new javax.swing.JButton();
         jb_Eliminar = new javax.swing.JButton();
@@ -348,6 +355,66 @@ public class Pantalla_Principal extends javax.swing.JFrame {
                 .addGap(30, 30, 30))
         );
 
+        jb_listarPersonas.setText("Personas");
+
+        jb_listarObjetos.setText("Objetos");
+
+        javax.swing.GroupLayout ListarLayout = new javax.swing.GroupLayout(Listar.getContentPane());
+        Listar.getContentPane().setLayout(ListarLayout);
+        ListarLayout.setHorizontalGroup(
+            ListarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ListarLayout.createSequentialGroup()
+                .addGap(141, 141, 141)
+                .addComponent(jb_listarPersonas, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 186, Short.MAX_VALUE)
+                .addComponent(jb_listarObjetos, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(98, 98, 98))
+        );
+        ListarLayout.setVerticalGroup(
+            ListarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ListarLayout.createSequentialGroup()
+                .addGap(205, 205, 205)
+                .addGroup(ListarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jb_listarObjetos, javax.swing.GroupLayout.DEFAULT_SIZE, 67, Short.MAX_VALUE)
+                    .addComponent(jb_listarPersonas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(243, Short.MAX_VALUE))
+        );
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "Rol"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(jTable1);
+
+        javax.swing.GroupLayout ListarPersonasLayout = new javax.swing.GroupLayout(ListarPersonas.getContentPane());
+        ListarPersonas.getContentPane().setLayout(ListarPersonasLayout);
+        ListarPersonasLayout.setHorizontalGroup(
+            ListarPersonasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ListarPersonasLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(318, Short.MAX_VALUE))
+        );
+        ListarPersonasLayout.setVerticalGroup(
+            ListarPersonasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ListarPersonasLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 412, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(24, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jb_Crear.setText("Crear");
@@ -432,7 +499,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         double altura = Double.parseDouble(a);
         String p = tf_NewAltura.getText();
         double peso = Double.parseDouble(a);
-        
+
         if (cb_TipoDeUsuario.getSelectedIndex() == 0) {
             String username = tf_NewUserGerente.getText();
             String cargo = tf_NewCargoGerente.getText();
@@ -446,7 +513,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
             String s = tf_Sueldo.getText();
             int sueldo = Integer.parseInt(s);
             Persona_General pg = new Persona_General(ocupacion, horario, tiempo, sueldo, id, nombre, sexo, estado, altura, peso);
-            
+
         }
 
 
@@ -508,6 +575,8 @@ public class Pantalla_Principal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDialog CreacionPersonal;
     private javax.swing.JDialog Crear;
+    private javax.swing.JDialog Listar;
+    private javax.swing.JDialog ListarPersonas;
     private javax.swing.JComboBox<String> cb_TipoDeUsuario;
     private javax.swing.ButtonGroup grupoEstadoCivil;
     private javax.swing.ButtonGroup grupoSexo;
@@ -526,6 +595,8 @@ public class Pantalla_Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     private javax.swing.JButton jb_Crear;
     private javax.swing.JButton jb_CrearObjeto;
     private javax.swing.JButton jb_CrearPersona;
@@ -533,6 +604,8 @@ public class Pantalla_Principal extends javax.swing.JFrame {
     private javax.swing.JButton jb_Listar;
     private javax.swing.JButton jb_Modificar;
     private javax.swing.JButton jb_crear;
+    private javax.swing.JButton jb_listarObjetos;
+    private javax.swing.JButton jb_listarPersonas;
     private javax.swing.JRadioButton rb_NewCasado;
     private javax.swing.JRadioButton rb_NewF;
     private javax.swing.JRadioButton rb_NewM;
@@ -550,4 +623,6 @@ public class Pantalla_Principal extends javax.swing.JFrame {
     private javax.swing.JTextField tf_newPeso;
     private javax.swing.JTextField tf_newTrabajadoPersonal;
     // End of variables declaration//GEN-END:variables
+private ArrayList<Gerente> gerentes = new ArrayList();
+    private ArrayList<Persona_General> personal = new ArrayList();
 }
