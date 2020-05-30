@@ -182,6 +182,9 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         jScrollPane6 = new javax.swing.JScrollPane();
         ta_newDescripcion = new javax.swing.JTextArea();
         grputoTallas = new javax.swing.ButtonGroup();
+        ListarObjetos = new javax.swing.JDialog();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         jb_Crear = new javax.swing.JButton();
         jb_Modificar = new javax.swing.JButton();
         jb_Eliminar = new javax.swing.JButton();
@@ -854,6 +857,48 @@ public class Pantalla_Principal extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Marca", "Tamaño", "Calidad", "Descripcion", "Entrega", "Color"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane7.setViewportView(jTable1);
+
+        javax.swing.GroupLayout ListarObjetosLayout = new javax.swing.GroupLayout(ListarObjetos.getContentPane());
+        ListarObjetos.getContentPane().setLayout(ListarObjetosLayout);
+        ListarObjetosLayout.setHorizontalGroup(
+            ListarObjetosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ListarObjetosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 538, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(350, Short.MAX_VALUE))
+        );
+        ListarObjetosLayout.setVerticalGroup(
+            ListarObjetosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ListarObjetosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 556, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(29, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jb_Crear.setText("Crear");
@@ -1193,6 +1238,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
     private javax.swing.JDialog Crear;
     private javax.swing.JDialog CrearObjetos;
     private javax.swing.JDialog Listar;
+    private javax.swing.JDialog ListarObjetos;
     private javax.swing.JDialog ListarPersonas;
     private javax.swing.JComboBox<String> cb_ListaTiposObjetos;
     private javax.swing.JComboBox<String> cb_TipoDeUsuario;
@@ -1240,6 +1286,8 @@ public class Pantalla_Principal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JTable jTable1;
     private javax.swing.JButton jb_Color;
     private javax.swing.JButton jb_Crear;
     private javax.swing.JButton jb_CrearObjeto;
