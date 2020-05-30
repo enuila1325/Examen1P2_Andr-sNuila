@@ -25,6 +25,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
             tf_newOcupacionPersonal.setEnabled(false);
             tf_newTrabajadoPersonal.setEnabled(false);
             tf_newHorarioPersonal.setEnabled(false);
+            tf_Sueldo.setEnabled(false);
         } else if (cb_TipoDeUsuario.getSelectedIndex() == 1) {
             tf_NewCargoGerente.setEnabled(false);
             tf_NewUserGerente.setEnabled(false);
@@ -32,6 +33,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
             tf_newOcupacionPersonal.setEnabled(true);
             tf_newTrabajadoPersonal.setEnabled(true);
             tf_newHorarioPersonal.setEnabled(true);
+            tf_Sueldo.setEnabled(true);
         }
         if (cb_ListaTiposObjetos.getSelectedIndex() == 0) {
             tf_talla.setEnabled(true);
@@ -1310,8 +1312,10 @@ public class Pantalla_Principal extends javax.swing.JFrame {
                 String calidad = ta_NewCalidad.getText();
                 Persona entrega = (Persona) cb_personas.getSelectedItem();
                 if (cb_ListaTiposObjetos.getSelectedIndex() == 0) {
+
                     String t = tf_talla.getText();
                     int talla = Integer.parseInt(t);
+                    
                     String suela = ta_NewSuela.getText();
                     String c = tf_NewComodida.getText();
                     int comodida = Integer.parseInt(c);
@@ -1466,8 +1470,13 @@ public class Pantalla_Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2MouseClicked
 
     private void jb_EliminarTotal3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_EliminarTotal3MouseClicked
-        int del = tablaBorra.getSelectedIndex();
-        personas.remove(del);
+        try {
+            int del = tablaBorra.getSelectedIndex();
+            personas.remove(del);
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Valide los datos");
+        }
     }//GEN-LAST:event_jb_EliminarTotal3MouseClicked
 
     private void jb_regresarElOvjMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_regresarElOvjMouseClicked
@@ -1478,8 +1487,13 @@ public class Pantalla_Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jb_regresarElOvjMouseClicked
 
     private void jb_elTotalObjMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_elTotalObjMouseClicked
-        int del = TablaBorrar_Objetos.getSelectedIndex();
-        objetos.remove(del);
+        try {
+            int del = TablaBorrar_Objetos.getSelectedIndex();
+            objetos.remove(del);
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Valide los datos");
+        }
     }//GEN-LAST:event_jb_elTotalObjMouseClicked
 
     private void jb_ElObjetoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_ElObjetoMouseClicked
