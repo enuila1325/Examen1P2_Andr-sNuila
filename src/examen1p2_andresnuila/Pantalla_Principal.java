@@ -1211,7 +1211,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
 
                 }
                 JOptionPane.showMessageDialog(this, "Se ha creado con exito el nuevo integrante del personal");
-                JOptionPane.showMessageDialog(this, "Se ha eliminado de la tabla con exito");
+
             } else {
                 JOptionPane.showMessageDialog(this, "Verifique la contraseña para realizar esta accion");
             }
@@ -1315,7 +1315,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
 
                     String t = tf_talla.getText();
                     int talla = Integer.parseInt(t);
-                    
+
                     String suela = ta_NewSuela.getText();
                     String c = tf_NewComodida.getText();
                     int comodida = Integer.parseInt(c);
@@ -1473,6 +1473,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         try {
             int del = tablaBorra.getSelectedIndex();
             personas.remove(del);
+            JOptionPane.showMessageDialog(this, "Elimindo con exito");
         } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(this, "Valide los datos");
@@ -1490,6 +1491,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         try {
             int del = TablaBorrar_Objetos.getSelectedIndex();
             objetos.remove(del);
+            JOptionPane.showMessageDialog(this, "Elimindo con exito");
         } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(this, "Valide los datos");
