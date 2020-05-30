@@ -80,6 +80,25 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         modeloO.addElement("Zapato");
         modeloO.addElement("Ropa");
         modeloO.addElement("Hogar");
+        tf_NewAltura.setText("");
+        tf_NewCargoGerente.setText("");
+        tf_NewComodida.setText("");
+        tf_NewEdad.setText("");
+        tf_NewId.setText("");
+        tf_NewPais.setText("");
+        tf_NewTamaño.setText("");
+        tf_NewUserGerente.setText("");
+        tf_Newmarca.setText("");
+        tf_Newtela.setText("");
+        tf_Sueldo.setText("");
+        tf_gerentePassword.setText("");
+        tf_newGarantia3.setText("");
+        tf_newHorarioPersonal.setText("");
+        tf_newName.setText("");
+        tf_newOcupacionPersonal.setText("");
+        tf_newPeso.setText("");
+        tf_newTrabajadoPersonal.setText("");
+        tf_talla.setText("");
     }
 
     /**
@@ -1220,7 +1239,25 @@ public class Pantalla_Principal extends javax.swing.JFrame {
             e.printStackTrace();
             JOptionPane.showMessageDialog(this, "Valide los datos");
         }
-
+        tf_NewAltura.setText("");
+        tf_NewCargoGerente.setText("");
+        tf_NewComodida.setText("");
+        tf_NewEdad.setText("");
+        tf_NewId.setText("");
+        tf_NewPais.setText("");
+        tf_NewTamaño.setText("");
+        tf_NewUserGerente.setText("");
+        tf_Newmarca.setText("");
+        tf_Newtela.setText("");
+        tf_Sueldo.setText("");
+        tf_gerentePassword.setText("");
+        tf_newGarantia3.setText("");
+        tf_newHorarioPersonal.setText("");
+        tf_newName.setText("");
+        tf_newOcupacionPersonal.setText("");
+        tf_newPeso.setText("");
+        tf_newTrabajadoPersonal.setText("");
+        tf_talla.setText("");
 
     }//GEN-LAST:event_jb_crearMouseClicked
 
@@ -1365,6 +1402,25 @@ public class Pantalla_Principal extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Valide los datos");
         }
 
+        tf_NewAltura.setText("");
+        tf_NewCargoGerente.setText("");
+        tf_NewComodida.setText("");
+        tf_NewEdad.setText("");
+        tf_NewId.setText("");
+        tf_NewPais.setText("");
+        tf_NewTamaño.setText("");
+        tf_NewUserGerente.setText("");
+        tf_Newmarca.setText("");
+        tf_Newtela.setText("");
+        tf_Sueldo.setText("");
+        tf_gerentePassword.setText("");
+        tf_newGarantia3.setText("");
+        tf_newHorarioPersonal.setText("");
+        tf_newName.setText("");
+        tf_newOcupacionPersonal.setText("");
+        tf_newPeso.setText("");
+        tf_newTrabajadoPersonal.setText("");
+        tf_talla.setText("");
     }//GEN-LAST:event_jb_crearObjetoMouseClicked
 
     private void cb_ListaTiposObjetosItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb_ListaTiposObjetosItemStateChanged
