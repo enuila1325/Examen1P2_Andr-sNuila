@@ -491,6 +491,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Objetos"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jb_listarObjetosMouseClicked"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -662,7 +665,7 @@
                                                       <EmptySpace max="32767" attributes="0"/>
                                                       <Component id="jScrollPane4" min="-2" max="-2" attributes="0"/>
                                                   </Group>
-                                                  <Component id="jButton1" min="-2" pref="325" max="-2" attributes="0"/>
+                                                  <Component id="jb_crearObjeto" min="-2" pref="325" max="-2" attributes="0"/>
                                                   <Component id="jLabel23" alignment="0" min="-2" max="-2" attributes="0"/>
                                                   <Group type="102" alignment="1" attributes="0">
                                                       <Group type="103" groupAlignment="0" attributes="0">
@@ -827,7 +830,7 @@
                   <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                   <Component id="cb_personas" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                  <Component id="jb_crearObjeto" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                   <Component id="jb_regresar3" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
@@ -1073,12 +1076,12 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton1">
+        <Component class="javax.swing.JButton" name="jb_crearObjeto">
           <Properties>
             <Property name="text" type="java.lang.String" value="CREAR"/>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton1MouseClicked"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jb_crearObjetoMouseClicked"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jb_regresar3">
@@ -1116,15 +1119,30 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jScrollPane7" min="-2" pref="538" max="-2" attributes="0"/>
-                  <EmptySpace pref="350" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="104" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="jb_eliminar2" max="32767" attributes="0"/>
+                      <Component id="jb_regresar4" pref="138" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="108" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jScrollPane7" min="-2" pref="556" max="-2" attributes="0"/>
+              <Group type="102" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jScrollPane7" min="-2" pref="556" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
+                          <Component id="jb_eliminar2" min="-2" pref="87" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="122" max="-2" attributes="0"/>
+                          <Component id="jb_regresar4" min="-2" pref="87" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
                   <EmptySpace pref="29" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -1138,7 +1156,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTable" name="jTable1">
+            <Component class="javax.swing.JTable" name="jt_InventarioObjetos">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                   <Table columnCount="6" rowCount="0">
@@ -1154,6 +1172,22 @@
             </Component>
           </SubComponents>
         </Container>
+        <Component class="javax.swing.JButton" name="jb_eliminar2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="ELIMINAR"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jb_eliminar2MouseClicked"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="jb_regresar4">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="REGRESAR"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jb_regresar4MouseClicked"/>
+          </Events>
+        </Component>
       </SubComponents>
     </Container>
   </NonVisualComponents>
