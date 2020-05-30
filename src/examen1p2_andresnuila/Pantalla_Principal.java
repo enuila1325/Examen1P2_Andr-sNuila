@@ -195,6 +195,10 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         jb_EliminarTotal3 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         tablaBorra = new javax.swing.JComboBox<>();
+        Borrar_Objetos = new javax.swing.JDialog();
+        TablaBorrar_Objetos = new javax.swing.JComboBox<>();
+        jButton1 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
         jb_Crear = new javax.swing.JButton();
         jb_Modificar = new javax.swing.JButton();
         jb_Eliminar = new javax.swing.JButton();
@@ -1020,6 +1024,44 @@ public class Pantalla_Principal extends javax.swing.JFrame {
                 .addGap(142, 142, 142))
         );
 
+        TablaBorrar_Objetos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jButton1.setText("ELIMINAR TOTALMENTE");
+
+        jButton3.setText("REGRESAR");
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout Borrar_ObjetosLayout = new javax.swing.GroupLayout(Borrar_Objetos.getContentPane());
+        Borrar_Objetos.getContentPane().setLayout(Borrar_ObjetosLayout);
+        Borrar_ObjetosLayout.setHorizontalGroup(
+            Borrar_ObjetosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Borrar_ObjetosLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(TablaBorrar_Objetos, javax.swing.GroupLayout.PREFERRED_SIZE, 391, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(177, 177, 177))
+            .addGroup(Borrar_ObjetosLayout.createSequentialGroup()
+                .addGap(118, 118, 118)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(70, 70, 70)
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(140, Short.MAX_VALUE))
+        );
+        Borrar_ObjetosLayout.setVerticalGroup(
+            Borrar_ObjetosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Borrar_ObjetosLayout.createSequentialGroup()
+                .addGap(184, 184, 184)
+                .addComponent(TablaBorrar_Objetos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(131, 131, 131)
+                .addGroup(Borrar_ObjetosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(136, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jb_Crear.setText("Crear");
@@ -1423,6 +1465,13 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         personas.remove(del);
     }//GEN-LAST:event_jb_EliminarTotal3MouseClicked
 
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+       this.pack();
+        this.setLocationRelativeTo(this);
+        this.setVisible(true);
+        Borrar_Objetos.setVisible(false);
+    }//GEN-LAST:event_jButton3MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1459,6 +1508,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JDialog Borrar_Objetos;
     private javax.swing.JDialog CreacionPersonal;
     private javax.swing.JDialog Crear;
     private javax.swing.JDialog CrearObjetos;
@@ -1467,13 +1517,16 @@ public class Pantalla_Principal extends javax.swing.JFrame {
     private javax.swing.JDialog Listar;
     private javax.swing.JDialog ListarObjetos;
     private javax.swing.JDialog ListarPersonas;
+    private javax.swing.JComboBox<String> TablaBorrar_Objetos;
     private javax.swing.JComboBox<String> cb_ListaTiposObjetos;
     private javax.swing.JComboBox<String> cb_TipoDeUsuario;
     private javax.swing.JComboBox<String> cb_personas;
     private javax.swing.ButtonGroup grputoTallas;
     private javax.swing.ButtonGroup grupoEstadoCivil;
     private javax.swing.ButtonGroup grupoSexo;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
