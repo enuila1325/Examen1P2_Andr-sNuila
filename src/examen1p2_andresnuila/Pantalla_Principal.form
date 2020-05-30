@@ -1237,6 +1237,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Eliminar Objeto"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jb_ElObjetoMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel34">
           <Properties>
@@ -1299,12 +1302,7 @@
         <Component class="javax.swing.JComboBox" name="tablaBorra">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="Item 1"/>
-                <StringItem index="1" value="Item 2"/>
-                <StringItem index="2" value="Item 3"/>
-                <StringItem index="3" value="Item 4"/>
-              </StringArray>
+              <StringArray count="0"/>
             </Property>
           </Properties>
           <AuxValues>
@@ -1325,9 +1323,9 @@
               </Group>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="118" max="-2" attributes="0"/>
-                  <Component id="jButton1" min="-2" pref="198" max="-2" attributes="0"/>
+                  <Component id="jb_elTotalObj" min="-2" pref="198" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
-                  <Component id="jButton3" min="-2" pref="222" max="-2" attributes="0"/>
+                  <Component id="jb_regresarElOvj" min="-2" pref="222" max="-2" attributes="0"/>
                   <EmptySpace pref="140" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -1339,8 +1337,8 @@
                   <Component id="TablaBorrar_Objetos" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="131" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="jButton1" pref="125" max="32767" attributes="0"/>
-                      <Component id="jButton3" max="32767" attributes="0"/>
+                      <Component id="jb_elTotalObj" pref="125" max="32767" attributes="0"/>
+                      <Component id="jb_regresarElOvj" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace pref="136" max="32767" attributes="0"/>
               </Group>
@@ -1351,29 +1349,27 @@
         <Component class="javax.swing.JComboBox" name="TablaBorrar_Objetos">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="Item 1"/>
-                <StringItem index="1" value="Item 2"/>
-                <StringItem index="2" value="Item 3"/>
-                <StringItem index="3" value="Item 4"/>
-              </StringArray>
+              <StringArray count="0"/>
             </Property>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton1">
+        <Component class="javax.swing.JButton" name="jb_elTotalObj">
           <Properties>
             <Property name="text" type="java.lang.String" value="ELIMINAR TOTALMENTE"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jb_elTotalObjMouseClicked"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton3">
+        <Component class="javax.swing.JButton" name="jb_regresarElOvj">
           <Properties>
             <Property name="text" type="java.lang.String" value="REGRESAR"/>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton3MouseClicked"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jb_regresarElOvjMouseClicked"/>
           </Events>
         </Component>
       </SubComponents>

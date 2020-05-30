@@ -197,8 +197,8 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         tablaBorra = new javax.swing.JComboBox<>();
         Borrar_Objetos = new javax.swing.JDialog();
         TablaBorrar_Objetos = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        jb_elTotalObj = new javax.swing.JButton();
+        jb_regresarElOvj = new javax.swing.JButton();
         jb_Crear = new javax.swing.JButton();
         jb_Modificar = new javax.swing.JButton();
         jb_Eliminar = new javax.swing.JButton();
@@ -951,6 +951,11 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         });
 
         jb_ElObjeto.setText("Eliminar Objeto");
+        jb_ElObjeto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_ElObjetoMouseClicked(evt);
+            }
+        });
 
         jLabel34.setText("VENTANA PARA ELIMINAR TOTALMENTE DEL SISTEMA");
 
@@ -995,8 +1000,6 @@ public class Pantalla_Principal extends javax.swing.JFrame {
             }
         });
 
-        tablaBorra.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
         javax.swing.GroupLayout Eliminar_PersonalLayout = new javax.swing.GroupLayout(Eliminar_Personal.getContentPane());
         Eliminar_Personal.getContentPane().setLayout(Eliminar_PersonalLayout);
         Eliminar_PersonalLayout.setHorizontalGroup(
@@ -1024,14 +1027,17 @@ public class Pantalla_Principal extends javax.swing.JFrame {
                 .addGap(142, 142, 142))
         );
 
-        TablaBorrar_Objetos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jButton1.setText("ELIMINAR TOTALMENTE");
-
-        jButton3.setText("REGRESAR");
-        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+        jb_elTotalObj.setText("ELIMINAR TOTALMENTE");
+        jb_elTotalObj.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton3MouseClicked(evt);
+                jb_elTotalObjMouseClicked(evt);
+            }
+        });
+
+        jb_regresarElOvj.setText("REGRESAR");
+        jb_regresarElOvj.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_regresarElOvjMouseClicked(evt);
             }
         });
 
@@ -1045,9 +1051,9 @@ public class Pantalla_Principal extends javax.swing.JFrame {
                 .addGap(177, 177, 177))
             .addGroup(Borrar_ObjetosLayout.createSequentialGroup()
                 .addGap(118, 118, 118)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jb_elTotalObj, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(70, 70, 70)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jb_regresarElOvj, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(140, Short.MAX_VALUE))
         );
         Borrar_ObjetosLayout.setVerticalGroup(
@@ -1057,8 +1063,8 @@ public class Pantalla_Principal extends javax.swing.JFrame {
                 .addComponent(TablaBorrar_Objetos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(131, 131, 131)
                 .addGroup(Borrar_ObjetosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jb_elTotalObj, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
+                    .addComponent(jb_regresarElOvj, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(136, Short.MAX_VALUE))
         );
 
@@ -1165,8 +1171,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
                     String cargo = tf_NewCargoGerente.getText();
                     String password = tf_gerentePassword.getText();
                     Gerente g = new Gerente(username, password, cargo, id, nombre, sexo, estado, altura, peso, edad);
-                    gerentes.add(g);
-
+                    personas.add(g);
                     DefaultTableModel tmodelo = (DefaultTableModel) jt_ListaPersonal.getModel();
                     Object[] newrow = {g.getNombre(), cb_TipoDeUsuario.getSelectedItem()};
                     tmodelo.addRow(newrow);
@@ -1179,7 +1184,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
                     DefaultComboBoxModel u = (DefaultComboBoxModel) cb_personas.getModel();
                     u.addElement(g);
                     cb_personas.setModel(u);
-                    personas.add(g);
+
                 } else if (cb_TipoDeUsuario.getSelectedIndex() == 1) {
                     String ocupacion = tf_newOcupacionPersonal.getText();
                     String horario = tf_newHorarioPersonal.getText();
@@ -1188,7 +1193,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
                     String s = tf_Sueldo.getText();
                     int sueldo = Integer.parseInt(s);
                     Persona_General pg = new Persona_General(ocupacion, horario, tiempo, sueldo, id, nombre, sexo, estado, altura, peso, edad);
-                    personal.add(pg);
+                    personas.add(pg);
                     DefaultTableModel tmodelo = (DefaultTableModel) jt_ListaPersonal.getModel();
                     Object[] newrow = {pg.getNombre(), cb_TipoDeUsuario.getSelectedItem()};
                     tmodelo.addRow(newrow);
@@ -1201,7 +1206,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
                     DefaultComboBoxModel u = (DefaultComboBoxModel) cb_personas.getModel();
                     u.addElement(pg);
                     cb_personas.setModel(u);
-                    personas.add(pg);
+
                 }
                 JOptionPane.showMessageDialog(this, "Se ha creado con exito el nuevo integrante del personal");
                 JOptionPane.showMessageDialog(this, "Se ha eliminado de la tabla con exito");
@@ -1311,12 +1316,12 @@ public class Pantalla_Principal extends javax.swing.JFrame {
                     String c = tf_NewComodida.getText();
                     int comodida = Integer.parseInt(c);
                     Zapatos z = new Zapatos(talla, suela, comodida, color, marca, tamaño, calidad, entrega, descripcion);
-                    Zapatos.add(z);
+                    objetos.add(z);
                     DefaultTableModel tmodelo2 = (DefaultTableModel) jt_InventarioObjetos.getModel();
                     Object[] newrow = {z.getMarca(), z.getTamaño(), z.getCalidad(), z.getDescrípcion(), z.getEntrega(), z.getColor()};
                     tmodelo2.addRow(newrow);
                     jt_InventarioObjetos.setModel(tmodelo2);
-                    objetos.add(z);
+
                 } else if (cb_ListaTiposObjetos.getSelectedIndex() == 1) {
                     String talla = "";
                     if (rb_S.isSelected()) {
@@ -1329,23 +1334,23 @@ public class Pantalla_Principal extends javax.swing.JFrame {
                     String tela = tf_Newtela.getText();
                     String pais = tf_NewPais.getText();
                     Ropa r = new Ropa(talla, tela, pais, color, marca, tamaño, calidad, entrega, descripcion);
-                    prendas.add(r);
+                    objetos.add(r);
                     DefaultTableModel tmodelo2 = (DefaultTableModel) jt_InventarioObjetos.getModel();
                     Object[] newrow = {r.getMarca(), r.getTamaño(), r.getCalidad(), r.getDescrípcion(), r.getEntrega(), r.getColor()};
                     tmodelo2.addRow(newrow);
                     jt_InventarioObjetos.setModel(tmodelo2);
-                    objetos.add(r);
+
                 } else if (cb_ListaTiposObjetos.getSelectedIndex() == 2) {
                     String hogar = ta_newdHogar.getText();
                     String instrucciones = ta_NewInstrucciones.getText();
                     String garantia = tf_newGarantia3.getText();
                     Objetos_Hogar h = new Objetos_Hogar(hogar, instrucciones, garantia, color, marca, tamaño, calidad, entrega, descripcion);
-                    obj_hogar.add(h);
+                    objetos.add(h);
                     DefaultTableModel tmodelo2 = (DefaultTableModel) jt_InventarioObjetos.getModel();
                     Object[] newrow = {h.getMarca(), h.getTamaño(), h.getCalidad(), h.getDescrípcion(), h.getEntrega(), h.getColor()};
                     tmodelo2.addRow(newrow);
                     jt_InventarioObjetos.setModel(tmodelo2);
-                    objetos.add(h);
+
                 }
                 JOptionPane.showMessageDialog(this, "Se ha añadido un nuevo objeto con exito");
             } else {
@@ -1465,12 +1470,24 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         personas.remove(del);
     }//GEN-LAST:event_jb_EliminarTotal3MouseClicked
 
-    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
-       this.pack();
+    private void jb_regresarElOvjMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_regresarElOvjMouseClicked
+        this.pack();
         this.setLocationRelativeTo(this);
         this.setVisible(true);
         Borrar_Objetos.setVisible(false);
-    }//GEN-LAST:event_jButton3MouseClicked
+    }//GEN-LAST:event_jb_regresarElOvjMouseClicked
+
+    private void jb_elTotalObjMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_elTotalObjMouseClicked
+        int del = TablaBorrar_Objetos.getSelectedIndex();
+        objetos.remove(del);
+    }//GEN-LAST:event_jb_elTotalObjMouseClicked
+
+    private void jb_ElObjetoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_ElObjetoMouseClicked
+        Borrar_Objetos.pack();
+        Borrar_Objetos.setLocationRelativeTo(this);
+        Borrar_Objetos.setVisible(true);
+        Eliminar.setVisible(false);
+    }//GEN-LAST:event_jb_ElObjetoMouseClicked
 
     /**
      * @param args the command line arguments
@@ -1524,9 +1541,7 @@ public class Pantalla_Principal extends javax.swing.JFrame {
     private javax.swing.ButtonGroup grputoTallas;
     private javax.swing.ButtonGroup grupoEstadoCivil;
     private javax.swing.ButtonGroup grupoSexo;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1582,12 +1597,14 @@ public class Pantalla_Principal extends javax.swing.JFrame {
     private javax.swing.JButton jb_Regresar2;
     private javax.swing.JButton jb_crear;
     private javax.swing.JButton jb_crearObjeto;
+    private javax.swing.JButton jb_elTotalObj;
     private javax.swing.JButton jb_eliminar2;
     private javax.swing.JButton jb_listarObjetos;
     private javax.swing.JButton jb_listarPersonas;
     private javax.swing.JButton jb_regresar;
     private javax.swing.JButton jb_regresar3;
     private javax.swing.JButton jb_regresar4;
+    private javax.swing.JButton jb_regresarElOvj;
     private javax.swing.JTable jt_InventarioObjetos;
     private javax.swing.JTable jt_ListaPersonal;
     private javax.swing.JRadioButton rb_L;
@@ -1623,11 +1640,8 @@ public class Pantalla_Principal extends javax.swing.JFrame {
     private javax.swing.JTextField tf_newTrabajadoPersonal;
     private javax.swing.JTextField tf_talla;
     // End of variables declaration//GEN-END:variables
-    private ArrayList<Gerente> gerentes = new ArrayList();
+
     private ArrayList personas = new ArrayList();
-    private ArrayList<Persona_General> personal = new ArrayList();
-    private ArrayList<Zapatos> Zapatos = new ArrayList();
-    private ArrayList<Ropa> prendas = new ArrayList();
-    private ArrayList<Objetos_Hogar> obj_hogar = new ArrayList();
+
     private ArrayList objetos = new ArrayList();
 }
